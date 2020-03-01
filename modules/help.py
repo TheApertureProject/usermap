@@ -22,10 +22,18 @@ class Help(commands.Cog):
 
     @commands.command(aliases=["information", "about"])
     async def info(self, ctx):
-        e = discord.Embed(title="$username", description="Un robot d'analyse pour votre serveur.")
+        e = discord.Embed(title="$usermap", description=f"Un robot d'analyse pour votre serveur. Version : {VERSION}")
         e.add_field(name='✨ Liens utiles', value='[Lien d\'invite](http://bit.ly/2uIQwmh) | [Serveur de support](https://discord.gg/H7ZcCB) | [Site web du développeur](https://apertureproject.me/)')
         e.set_image(url='https://cdn.discordapp.com/attachments/683756494369587200/683756519967293467/usermap_banner-01.png')
         await ctx.send(embed=e)
+
+    @commands.command(aliases=["aide"])
+    async def help(self, ctx):
+        e = discord.Embed(title="Liste des commandes", description="usage : tapez `$<nom de la commande>` en retirant les crochets.")
+        e.add_field(name='✨ Aide', value="""`info` : En savoir plus sur moi
+        `help` : Affiche la liste de mes commandes""")
+        e.add_field(name='✨ Aide', value="""`scan-user` : Effectue une recherche des rapports associés à l'utilisateur spécifié
+        `scan-server` : Effectue une analyse complète des paramètres du serveur""")
 
 def setup(bot):
     bot.add_cog(Help(bot))
