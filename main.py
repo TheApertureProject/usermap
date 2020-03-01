@@ -43,7 +43,7 @@ async def on_connect():
 async def on_ready():
     loaded = len(MODULES)
     bot.remove_command('help')
-    for module in modules:
+    for module in MODULES:
         try:
             logging.info('Loading %s', module)
             bot.load_extension(f'modules.{module}')
