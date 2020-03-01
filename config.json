@@ -8,5 +8,5 @@
     "server_count_channel" : "683732660845412379",
     "server_invite" : "https://discord.gg/jEQmqX9",
     "version": ["1.0.0a"],
-    "modules": ["general"]
+    "modules": ["general", "help"]
 }
