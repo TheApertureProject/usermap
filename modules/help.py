@@ -34,6 +34,7 @@ class Help(commands.Cog):
         `help` : Affiche la liste de mes commandes""")
         e.add_field(name='✨ Aide', value="""`scan-user` : Effectue une recherche des rapports associés à l'utilisateur spécifié
         `scan-server` : Effectue une analyse complète des paramètres du serveur""")
+        await ctx.send(embed=e)
 
 def setup(bot):
     bot.add_cog(Help(bot))
