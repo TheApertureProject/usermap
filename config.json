@@ -1,0 +1,12 @@
+{
+    "prefix" : "$",
+    "owner_id" : "497691805123477505",
+    "client_id" : "683692844841697301",
+    "main_server_id" : "683717792737918997",
+    "server_join_channel" : "683732559280341013",
+    "error_reports_channel" : "683733103155609620",
+    "server_count_channel" : "683732660845412379",
+    "server_invite" : "https://discord.gg/wxBGu5f",
+    "version": ["1.0.0a"],
+    "modules": ["general"]
+}
