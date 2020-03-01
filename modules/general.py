@@ -28,7 +28,7 @@ class General(commands.Cog):
     @commands.command(aliases=['add'])
     async def invite(self, ctx):
         await ctx.send(
-            f'✨ Lien d'ajout : <http://bit.ly/2uIQwmh>')
+            f'✨ Lien d\'ajout : <http://bit.ly/2uIQwmh>')
 
 def setup(bot):
     bot.add_cog(General(bot))
