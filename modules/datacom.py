@@ -33,7 +33,7 @@ class Datacom(commands.Cog):
             UINFRINGMENT = user1["u_infringment"]
             ULEVEL = user1["u_level"]
 
-            e = discord.Embed(title="Résultat de la recherche", description="✨ Une entrée a été trouvée. Consultez la suite du rapport pour plus de détails)
+            e = discord.Embed(title="Résultat de la recherche", description="✨ Une entrée a été trouvée. Consultez la suite du rapport pour plus de détails")
 
             e.add_field(name=f"Rapport de l'utilisateur `{UNAME}`", value=f"""Niveau : `{ULEVEL}`
             Articles enfreints (`{len(UARTICLES)}`) : `{UARTICLES}`
