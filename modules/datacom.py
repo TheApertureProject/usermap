@@ -38,9 +38,9 @@ class Datacom(commands.Cog):
             Articles enfreints (`{len(UARTICLES)}`) : `{UARTICLES}`
             Détails : {u_infringment}""")
 
-            if ULEVEL = 1:
+            if ULEVEL == 1:
                 bannerurl="http://bit.ly/38gY1i2"
-            elif ULEVEL = 2:
+            elif ULEVEL == 2:
                 bannerurl="http://bit.ly/38hmweM"
             else:
                 bannerurl="http://bit.ly/2IcJzNq"
