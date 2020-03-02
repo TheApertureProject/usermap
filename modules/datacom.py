@@ -17,8 +17,8 @@ db = client.dis_user
 class Datacom(commands.Cog):
     
     def __init__(self, bot):
-    self.bot = bot
-    self.config = bot.config
+        self.bot = bot
+        self.config = bot.config
 
     @commands.command(aliases=['check', 'search', 'recherche', 'rechercher']
     async def search(self, ctx, playerid:int):
