@@ -33,17 +33,16 @@ class Datacom(commands.Cog):
             UINFRINGMENT = user1["u_infringment"]
             ULEVEL = user1["u_level"]
 
-            e = discord.Embed(title="Résultats de la recherche", description="✨ Une entrée a été trouvée. Consultez la suite du rapport pour plus de détails")
+            e = discord.Embed(title="Résultats de la recherche", description="✨ Une entrée a été trouvée. Consultez la suite du rapport pour plus de détails, et [notre charte](https://discord.gg/3UPQZN) pour connaître le contenu des articles enfreints.")
             
             a = f"""Niveau : `{ULEVEL}`
-            Articles enfreints (x{len(UARTICLES)}) : `{UARTICLES}` ([Voir charte](https://discord.gg/3UPQZN))
+            Articles enfreints (x{len(UARTICLES)}) : `{UARTICLES}`
             Détails : {UINFRINGMENT}"""
             cremoval = "[]'\""
             for c in cremoval:
                 a = a.replace(c, "")
             
             e.add_field(name = f"Rapport de l'utilisateur `{UNAME}`", value = a)
-
             if ULEVEL == 1:
                 bannerurl="http://bit.ly/38gY1i2"
             elif ULEVEL == 2:
