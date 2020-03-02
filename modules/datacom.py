@@ -14,6 +14,8 @@ DB_PASSWORD = os.environ["DBPASSWORD"]
 client = MongoClient(f"mongodb+srv://{DB_USERNAME}:{DB_PASSWORD}@usermap-duaqm.gcp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.dis_user
 
+lgif = '<:loading:684031670520643640>'
+
 class Datacom(commands.Cog):
     
     def __init__(self, bot):
@@ -22,10 +24,12 @@ class Datacom(commands.Cog):
 
     @commands.command(aliases=['check', 'recherche', 'rechercher'])
     async def search(self, ctx, playerid:int):
+        z = discord.Embed(title=f"{lgif} Recherche en cours")
+        y = await ctx.send(embed=z)
         user1 = db.reported_user.find_one({'u_id' : playerid})
         if user1 == "None":
-            a = discord.Embed(title="Résultats de la recherche", description="❌ Aucune entrée associée à cet ID n'a pu être identifiée.", color=0xffff00)
-            await ctx.send(embed=a)
+            a = discord.Embed(title="Résultats de la recherche", description="❌ Aucune entrée associée à cet ID n'a été trouvée.", color=0xffff00)
+            await y.edit(content=embed=a)
         else:
             UNAME = user1["u_name"]
             UID = user1["u_id"]
@@ -52,7 +56,12 @@ class Datacom(commands.Cog):
             
             e.set_image(url=bannerurl)
 
-            await ctx.send(embed=e)
+            await y.edit(content=embed=e)
 
+
+            @commands.command(aliases=["rapport"])
+            async def report(self, ctx, playerid, link, infringment):
+                
+            
 def setup(bot):
     bot.add_cog(Datacom(bot))
