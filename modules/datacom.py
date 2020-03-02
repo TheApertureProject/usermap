@@ -20,7 +20,7 @@ class Datacom(commands.Cog):
         self.bot = bot
         self.config = bot.config
 
-    @commands.command(aliases=['check', 'search', 'recherche', 'rechercher']
+    @commands.command(aliases=['check', 'search', 'recherche', 'rechercher'])
     async def search(self, ctx, playerid:int):
         user1 = db.reported_user.find_one({'u_id' : playerid})
         if user1 = "None":
