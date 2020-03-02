@@ -23,7 +23,7 @@ class Datacom(commands.Cog):
     @commands.command(aliases=['check', 'search', 'recherche', 'rechercher'])
     async def search(self, ctx, playerid:int):
         user1 = db.reported_user.find_one({'u_id' : playerid})
-        if user1 = "None":
+        if user1 == "None":
             await ctx.send(embed = discord.Embed(title="Résultat de la recherche", description="❌ Aucune entrée associée à cet ID n'a pu être identifiée.", color=0xffff00)
         else:
             UNAME=user1["u_name"]
