@@ -59,8 +59,8 @@ class Datacom(commands.Cog):
             await y.edit(embed=e)
 
 
-            @commands.command(aliases=["rapport"])
-            async def report(self, ctx, playerid, link, infringment):
+#            @commands.command(aliases=["rapport"])
+#            async def report(self, ctx, playerid, link, infringment):
 
 
 def setup(bot):
