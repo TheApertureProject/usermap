@@ -29,7 +29,7 @@ class Datacom(commands.Cog):
         user1 = db.reported_user.find_one({'u_id' : playerid})
         if user1 == "None":
             a = discord.Embed(title="Résultats de la recherche", description="❌ Aucune entrée associée à cet ID n'a été trouvée.", color=0xffff00)
-            await y.edit(content=embed=a)
+            await y.edit(embed=a)
         else:
             UNAME = user1["u_name"]
             UID = user1["u_id"]
@@ -56,7 +56,7 @@ class Datacom(commands.Cog):
             
             e.set_image(url=bannerurl)
 
-            await y.edit(content=embed=e)
+            await y.edit(embed=e)
 
 
             @commands.command(aliases=["rapport"])
