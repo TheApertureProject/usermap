@@ -14,8 +14,6 @@ DB_PASSWORD = os.environ["DBPASSWORD"]
 client = MongoClient(f"mongodb+srv://{DB_USERNAME}:{DB_PASSWORD}@usermap-duaqm.gcp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.dis_user
 
-lgif = '<:loading:684031670520643640>'
-
 class Datacom(commands.Cog):
     
     def __init__(self, bot):
@@ -24,7 +22,7 @@ class Datacom(commands.Cog):
 
     @commands.command(aliases=['check', 'recherche', 'rechercher'])
     async def search(self, ctx, playerid:int):
-        z = discord.Embed(description=f"{lgif} Recherche en cours")
+        z = discord.Embed(description=f"<:loading:684031670520643640> Recherche en cours")
         y = await ctx.send(embed=z)
         user1 = db.reported_user.find_one({'u_id' : playerid})
         if user1 is None:
