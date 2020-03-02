@@ -8,8 +8,8 @@ import os
 with open('./config.json', 'r') as cjson:
     config = json.load(cjson)
 
-DB_USERNAME = os["DBUSERNAME"]
-DB_PASSWORD = os["DBPASSWORD"]
+DB_USERNAME = os.environ["DBUSERNAME"]
+DB_PASSWORD = os.environ["DBPASSWORD"]
 
 client = MongoClient(f"mongodb+srv://{DB_USERNAME}:{DB_PASSWORD}@usermap-duaqm.gcp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.dis_user
