@@ -61,7 +61,7 @@ class Datacom(commands.Cog):
 
             @commands.command(aliases=["rapport"])
             async def report(self, ctx, playerid, link, infringment):
-                
-            
+
+
 def setup(bot):
     bot.add_cog(Datacom(bot))
