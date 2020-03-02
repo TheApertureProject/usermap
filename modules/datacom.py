@@ -20,7 +20,7 @@ class Datacom(commands.Cog):
         self.bot = bot
         self.config = bot.config
 
-    @commands.command(aliases=['check', 'recherche', 'rechercher'])
+    @commands.command(aliases=['check', 'recherche', 'rechercher', 'scan'])
     async def search(self, ctx, playerid:int):
         z = discord.Embed(title = "<a:loading:684031670520643640> Recherche en cours")
         y = await ctx.send(embed = z)
@@ -57,8 +57,13 @@ class Datacom(commands.Cog):
             await y.edit(embed=e)
 
 
-#            @commands.command(aliases=["rapport"])
-#            async def report(self, ctx, playerid, link, infringment):
+            @commands.command(aliases=["rapport"])
+            async def report(self, ctx, playerid:int, playername, link, infringment):
+                e = discord.Embed(title=f"Rapport pour l'utilisateur {playername}", description=f"""ID : {playerid}
+                Raison : {infringment}""")
+                e.set_image(url=link)
+                y = await ctx.send(embed = z)
+                z = discord.Embed(title = "<a:loading:684031670520643640> Envoi du rapport en cours")
 
 
 def setup(bot):
